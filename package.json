@@ -1,0 +1,18 @@
+{
+  "name": "dictionary_famersbs",
+  "version": "0.0.1",
+  "description": "Dictionary",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.11.0",
+    "express": "^4.11.2",
+    "express-session": "^1.10.2",
+    "jquery": "^2.1.3",
+    "mysql": "^2.5.4"
+  }
+}

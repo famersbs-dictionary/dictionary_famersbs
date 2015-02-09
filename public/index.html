@@ -1,0 +1,80 @@
+<html>
+<head>
+	<title>dictionary</title>
+	
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/index.css">
+	<!--<link rel="stylesheet" href="css/app.css">-->
+</head>
+<body>
+	<section id="todoapp">
+		<header id="header">
+			<h1>Dictionary</h1>
+		</header>
+		<section id="header-menu">
+
+		</section>
+		<section id="addBox">
+			<input id="new-todo" placeholder="Input new word( word --> descript )" autofocus>
+		</section>
+		<section id="main">
+			<input id="toggle-all" type="checkbox">
+			<label for="toggle-all">Mark all as complete</label>
+			<ul id="todo-list"></ul>
+		</section>
+		<footer id="footer"></footer>
+	</section>
+
+	<footer id="info">
+		<p>Double-click to edit a descript</p>
+		<p>Created by <a href="http://famersbs.wordpress.com">famersbs</a></p>
+		<p>Dictionary v 0.1</p>
+	</footer>
+
+	<script id="word-template" type="text/x-handlebars-template">
+		{{#this}}
+		<li {{#if completed}}class="completed"{{/if}} data-id="{{id}}">
+			<div class="view">
+				<input class="toggle" type="checkbox" {{#if completed}}checked{{/if}}>
+				<label>{{lastupdate}}</label>
+				<label>{{word}}</label>
+				<ul id="descript" >
+				{{#this.descript}}
+					<li>{{this.desc}} {{#if this.sync }}*{{/if}} <button class="destory"></button></li>
+				{{/this.descript}}
+				</ul>
+				<button class="destroy"></button>
+			</div>
+			<input class="edit" value="{{title}}">
+		</li>
+		{{/this}}
+	</script>
+
+	<script id="header-menu-template" type="text/x-handlers-template">
+		<span id="word-count"> {{unsyncCount}} / {{todoCount}} </span>
+
+		<ul id="filters">
+			<li>
+				<a {{#eq sortfield 'date'}}class="selected"{{/eq}} href="#/date">Date</a>
+			</li>
+			<li>
+				<a {{#eq sortfield 'alphabat_a'}}class="selected"{{/eq}}href="#/alphabat_a">Alphabet Asc</a>
+			</li>
+			<li>
+				<a {{#eq sortfield 'alphabat_d'}}class="selected"{{/eq}}href="#/alphabat_d">Alphabet Dec</a>
+			</li>
+		</ul>
+		{{#if enableSyncBtn}}
+		<button id="sync-btn">sync</button>
+		{{/if}}
+	</script>
+
+
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="js/handlebars/dist/handlebars.js"></script>
+	<script src="js/director/build/director.js"></script>
+	<script src="js/app.js"></script>
+</body>
+
+</html>

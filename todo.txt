@@ -1,0 +1,96 @@
+ver 0.1
+	V - create word table
+	V - create header menu ( route, filtering )
+	- new word logic change
+		V : adding multi description
+		: add regist date
+	V - word view change
+
+	- regist git hub
+
+	- synchronized
+		V : show unsynchronized word count
+		V : create synchronized btn
+
+		V : sync requester
+			V : Create syncer
+			V : client push request
+			V : client pull requqest
+
+		V : sync api
+			V -> push/:word/d:descript
+				: GET
+				: Result -> Success or fail
+
+			V -> pull/
+				: GET
+				: Result -> all words format is json
+
+		: delete sync
+
+		: adding monitor module at client syncer 
+
+		!!! descript and word isn't deleted -> just on the unshow flag --> it just unvisible
+
+	- show type
+		V : find
+
+		: date group
+
+		: alphabat asc
+		: alphabat desc
+
+		: paging
+
+	- detail edit
+
+	- default index table
+		: insert
+			V -> just insert
+			-> dup check word and desc --> update query??
+
+		: select
+		: modify
+		: delete
+
+	- dictionary design change
+		: word
+		: descript
+		: insert animation
+
+
+	- delete descript ( not word )
+
+	- mobile support
+		: 
+
+!! sync request json sample
+{ test1: 
+   [ { desc: 'dfasf', sync: false },
+     { desc: 'iaisd', sync: false } ],
+  test2: [ { desc: 'dfasfa', sync: false } ],
+  test3: [ { desc: 'fjsiaosdf', sync: false } ],
+  ttt: 
+   [ { desc: 'sdf', sync: false },
+     { desc: ' 무슨 뜻인가?', sync: false },
+     { desc: 'dfijassadfa', sync: false } ],
+  test4: [ { desc: '\'s a new word', sync: false } ],
+  test5: 
+   [ { desc: '\'s a new word', sync: false },
+     { desc: 'it\'s a new word', sync: false } ],
+  bee: [ { desc: '벌', sync: false } ],
+  elephant: [ { desc: '코끼리', sync: false } ],
+  'as soon as': [ { desc: '되도록 빨리', sync: false } ],
+  '잘해낸다': [ { desc: '그렇다는거지', sync: false } ],
+  '사전': [ { desc: 'dictionary', sync: false } ] }
+
+
+
+ver 0....
+	- 키 입력 만으로 단어와 설명을 구분할 수 있도록 한다.
+	- 단어를 입력 하는 순간 자동 완성 되어 기존에 등록된 내용들이 보여지게 한다.
+	- 모드 별로 단어 나오는 순서나 표현이 달라지게 한다.
+
+	- synch 모드 ( 핸드폰으로 외부에서 입력한 내용을 synch 맞추는 기능 넣기 )
+
+	- array의 filter를 사용해서 필터링 하는데... descript 단위로 처리 가능 할까?
