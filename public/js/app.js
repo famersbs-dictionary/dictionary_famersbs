@@ -35,6 +35,16 @@ jQuery(function ($) {
 				var store = localStorage.getItem(namespace);
 				return (store && JSON.parse(store)) || [];
 			}
+		},
+
+		getDateTimeStr: function(){
+			var now = new Date();
+			var addingZero = function( target_number ){
+				if( target_number < 10 ) return '0' + target_number;
+				return target_number;
+			}
+			return now.getFullYear() + "-" + addingZero( now.getDate() ) + "-" + addingZero( now.getDay() ) 
+					+ " " + addingZero( now.getHours() )+  ":" + addingZero( now.getMinutes() ) + ":" + addingZero( now.getSeconds() );
 		}
 	};
 
@@ -216,7 +226,7 @@ jQuery(function ($) {
 			for( var i = 0 ; i < this.todos.length ; ++ i ){
 				if( this.todos[i].word == word ) {
 					this.todos[i].descript.push( { desc:descript, sync:false } );
-					this.todos[i].lastupdate = new Date();
+					this.todos[i].lastupdate = util.getDateTimeStr();
 					isfinded = true;
 					break;
 				}
@@ -229,7 +239,7 @@ jQuery(function ($) {
 					title: val,
 					word: word,
 					descript: [ { desc:descript, sync:false } ],
-					lastupdate: new Date(),
+					lastupdate: util.getDateTimeStr(),
 					completed: false
 				});
 			}

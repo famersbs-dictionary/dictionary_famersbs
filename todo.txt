@@ -1,12 +1,13 @@
 ver 0.1
 	V - create word table
 	V - create header menu ( route, filtering )
-	- new word logic change
+	V - new word logic change
 		V : adding multi description
-		: add regist date
+		V : add regist date
 	V - word view change
 
-	- regist git hub
+	V - regist git hub
+		: https://github.com/famersbs/dictionary.git
 
 	- synchronized
 		V : show unsynchronized word count
@@ -26,11 +27,24 @@ ver 0.1
 				: GET
 				: Result -> all words format is json
 
-		: delete sync
+			V -> bug - removed date field after sync
+				V : have no field in word object
+				V : different show type sync before and after.
+
+
+
+
 
 		: adding monitor module at client syncer 
 
 		!!! descript and word isn't deleted -> just on the unshow flag --> it just unvisible
+
+	- insert sync
+		: adding date is different ( do not send to server from client )
+
+	- delete sync
+		: deleting word
+		: deleting desc
 
 	- show type
 		V : find

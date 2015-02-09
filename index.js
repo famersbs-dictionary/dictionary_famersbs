@@ -71,11 +71,13 @@ app.get("/pull", function( req, res ){
 			var result = [];
 
 			for( var i = 0; i < rows.length ; ++ i ){
-				if( lastword == null || rows[i].word != lastword ){
+				if( lastword == null || rows[i].word != lastword.word ){
 					lastword = { word:rows[i].word, descript:[] };
 					result.push( lastword );
 				}
 				lastword.descript.push( { desc:rows[i].descript, sync:true, lastupdate:rows[i].lastupdate } );
+
+				lastword.lastupdate = rows[i].lastupdate;
 			}
 			res.json( result );
 		}
